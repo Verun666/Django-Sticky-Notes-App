@@ -1,0 +1,17 @@
+{% extends "sticky_notes_app/base.html" %} 
+ 
+{% block title %}{{ note.title }}{% endblock %} 
+ 
+{% block content %} 
+<div class="view-note-page"> 
+    <h1>{{ note.title }}</h1> 
+    <p>{{ note.content }}</p> 
+    <p><strong>Author:</strong> {{ note.author }}</p> 
+    <p><strong>Note created on:</strong> {{ note.created_at }}</p> 
+    <a class="btn btn-success" href="{% url 'edit_note' note.id %}">Edit Note</a> 
+    <a class="btn btn-info" href="{% url 'index' %}">Back to Notes List</a> 
+    <a class="btn btn-danger" href="{% url 'delete_note' note.id %}">Delete Note</a>
+</div> 
+{% endblock %} 
+
+
